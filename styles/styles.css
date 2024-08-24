@@ -6,6 +6,13 @@ body {
     color: #333;
 }
 
+.julius-sans-one-regular {
+    font-family: "Julius Sans One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
 header {
     position: fixed;
     width: 100%;
@@ -13,6 +20,18 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: top 0.3s;
+}
+
+h1{
+    font-weight: 900;
+font-size: xx-large;
+}
+
+.home-contentor p{
+    color: #ff90ed;
+    text-shadow: 0 0 15px #ffffff;
+    font-size: medium;
+    font-weight: 400;
 }
 
 nav {
@@ -63,12 +82,41 @@ nav a:hover {
 section {
     margin: 0rem 3rem;
     text-align: center;
-    padding: 1rem;
 }
 
 section h2 {
     color: #333;
 }
+
+.home-content, .home-contact {
+    padding: 1rem;
+}
+
+.home-contact{
+    padding-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#home{
+    padding-top: 5rem;
+}
+
+/*
+.fotito{
+        height: 100vh;
+        background-image: url("../assets/img/karen.jpg");
+        background-position: center;
+        color: #fff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 0px 0px 1px #272727;
+    }*/
 
 .experiencia-tarjetas {
     display: grid;
@@ -97,6 +145,19 @@ section h2 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.tarjeta3 {
+    background-color: white;
+    width: 30%;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.enviar{
+    margin-top: 1rem;
+    padding: 0.7rem;
 }
 
 .tarjeta2 p {
@@ -184,27 +245,109 @@ ul li {
     list-style: none;
 }
 
+@media (max-width: 385px) {
+    .experiencia-tarjetas {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }}
+
 @media (max-width: 768px) {
     nav ul {
         display: none;
         flex-direction: column;
         background-color: #ff90ed;
         position: absolute;
-        top: 100%;
+        top: 99%;
         left: 0;
         right: 0;
-        padding: 1rem 0;
-    }
+        z-index: 3000;
+    }  
 
+    .home-contentor img {
+        max-width: 200px;
+    }
+    
     nav ul.open {
         display: flex;
+        justify-content:baseline;
+        align-items: center;
+        gap: 6rem;
+        height: 100vh;
     }
 
     nav li {
-        margin: 0.5rem 0;
+        text-align: center;
+        font-size: xx-large;
+        font-family: "Julius Sans One", sans-serif;
+        font-weight: bold;
     }
 
     .menu-hamburguesa {
         display: flex;
     }
+
+    .tarjeta3 {
+        background-color: white;
+        width: 80%;
+        padding: 3rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+}
+
+/* Boton WPP */
+ 
+#gb-widget-8071 {
+    bottom: 35px;
+    right: 10px;
+    // opacity: 0;
+    // transition: opacity 0.5s;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 2300;
+    direction: ltr;
+    text-align: right;
+    display: false;
+    align-items: false;
+    flex-direction: false;
+}
+
+#gb-widget-8071 > * {
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+box-sizing: border-box; 
+}
+
+.hKYcqG {
+display: flex;
+margin: 7px;
+position: relative;
+-webkit-box-pack: end;
+justify-content: flex-end;
+}
+
+.kjRUkx {
+order: 2;
+position: relative;
+}
+
+.jRodDz {
+flex-shrink: 0;
+opacity: 1;
+width: 66px;
+height: 66px;
+border-radius: 50%;
+display: block;
+order: 2;
+padding: 5px;
+box-sizing: border-box;
+cursor: pointer;
+overflow: hidden;
+box-shadow: rgba(99, 99, 99, 0.5) 3px 7px 15px;
+transition: all 0.5s ease 0s;
+position: relative;
+z-index: 200;
+border: 3.375px solid rgb(255, 255, 255);
+animation: 2s ease 1s infinite normal none running hJgPhc;
+text-decoration: none;
+background-color: #ff90ed;
 }
