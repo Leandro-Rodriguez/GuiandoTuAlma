@@ -24,13 +24,14 @@ header {
 
 h1{
     font-weight: 900;
-font-size: xx-large;
+font-size: 2rem;
+text-shadow: 0px 0px 5px #ffffff;
 }
 
 .home-contentor p{
-    color: #ff90ed;
+    color: #585858;
     text-shadow: 0 0 15px #ffffff;
-    font-size: medium;
+    font-size: 1rem
     font-weight: 400;
 }
 
@@ -52,7 +53,9 @@ nav ul {
 
 nav li {
     margin: 0 1rem;
-
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 nav a {
@@ -60,10 +63,18 @@ nav a {
     color: white;
     font-weight: bold;
     transition: color 0.3s;
+    font-family: "Julius Sans One", sans-serif;
 }
 
 nav a:hover {
-    color: #7a4d74;
+    color: #8d5085;
+}
+
+.derechanav{
+    display: flex;
+    position: absolute;
+    right: 34px;
+    top: 34px;
 }
 
 .menu-hamburguesa {
@@ -86,6 +97,7 @@ section {
 
 section h2 {
     color: #333;
+    font-family: "Julius Sans One", sans-serif;
 }
 
 .home-content, .home-contact {
@@ -101,7 +113,7 @@ section h2 {
 }
 
 #home{
-    padding-top: 5rem;
+    padding-top: 7rem;
 }
 
 /*
@@ -241,6 +253,20 @@ footer {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.fotokaren {
+    padding: 1rem;
+}
+
+.fotokaren img{
+border-radius: 50%;
+width: 50%;
+padding: 0rem;
+-webkit-box-shadow: 0px 0px 30px 15px #FFFFFF; 
+box-shadow: 0px 0px 30px 15px #FFFFFF;
+max-height: 30rem;
+max-width: 30rem;
+}
+
 ul li {
     list-style: none;
 }
@@ -262,6 +288,20 @@ ul li {
         z-index: 3000;
     }  
 
+    #home{
+        padding-top: 5rem;
+    }
+   
+.derechanav{
+    display: flex;
+    height: 75vh;
+    width: 85%;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: space-around;
+}
+    
     .home-contentor img {
         max-width: 200px;
     }
@@ -283,6 +323,7 @@ ul li {
 
     .menu-hamburguesa {
         display: flex;
+        z-index: 1050;
     }
 
     .tarjeta3 {
@@ -293,7 +334,33 @@ ul li {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     
+    .fotokaren img{
+        width: 85%;
+        padding: 0;
+        }
+    
+        .izquierdanav{
+            position: fixed;
+            right: 0;
+            top: 4px;
+            z-index: 1100
+        }
+        
+        .menu-hamburguesa.active + ul {
+            display: flex; /* Muestra el menú cuando se active */
+        }
 }
+
+.elementoanim {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  }
+  
+  .elementoanim.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 /* Boton WPP */
  

@@ -23,12 +23,12 @@
     <header id="main-header">
         <nav id="navbar">
             <ul>
-                <li><a href="#home">GTA</a></li>
-                <li><a href="#quien-soy">Quién soy</a></li>
+                <div class="izquierdanav"><li><a href="#home"><img src="assets/img/guiandologonav.png" alt="Guiando tu alma"></a></li></div>
+                <div class="derechanav"><li><a href="#quien-soy">Quién soy</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#experiencias">Experiencias</a></li>
                 <li><a href="#precios">Precios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#contacto">Contacto</a></li></div>
             </ul>
             <div class="menu-hamburguesa">
                 <span></span>
@@ -40,7 +40,7 @@
 
     <section id="home">
         <div class="home-contentor">
-                <img src="assets/img/guiandopng.png" alt="Guiando tu alma">
+            <a href="#home"><img src="assets/img/guiandopng.png" alt="Guiando tu alma"></a>
             <h1 class="julius-sans-one-regular">GUIANDO TU ALMA</h1>
             <p>Descubre tu camino a través de los registros akáshicos y la sanación energética.</p>
         </div>
@@ -48,8 +48,10 @@
     </section>
 
     <section id="quien-soy">
-        <div class="home-content">
+        <div class="home-content elementoanim">
         <h2>Quién soy</h2>
+        <div class="fotokaren elementoanim">
+        <img src="assets/img/karenchaman2.png" alt="Karen"></div>
         <p>Soy una guía espiritual, conectando con energías y el mundo espiritual para ayudarte en tu camino. Realizo
             limpiezas energéticas y te acompaño en tu viaje interior.</p>
         </div>
@@ -57,7 +59,7 @@
     </section>
 
     <section id="servicios">
-        <div class="home-content">
+        <div class="home-content elementoanim">
         <h2>Servicios</h2>
 
         <div class="experiencia-tarjetas">
@@ -114,9 +116,9 @@
     </section>
 
     <section id="experiencias">
-        <div class="home-content">
+        <div class="home-content elementoanim">
         <h2>Experiencias</h2>
-        <div class="experiencia-tarjetas">
+        <div class="experiencia-tarjetas elementoanim">
             <div class="tarjeta">
                 <p>"Gracias a la lectura de registros, encontré paz interior y claridad en mi vida."</p>
                 <h3>- Ana, 34 años</h3>
@@ -155,7 +157,7 @@
     </section>
 
     <section id="precios">
-        <div class="home-content">
+        <div class="home-content elementoanim">
         <h2>Precios</h2>
         <div class="experiencia-tarjetas">
             <div class="tarjeta2">
@@ -180,7 +182,6 @@
                     <hr>$5050
                 </h3>
             </div>
-
 
             <div class="tarjeta2">
                 <h3>Lectura de Registros Akáshicos:
@@ -235,7 +236,7 @@
     </section>
 
     <section id="contacto">
-        <div class="home-contact">
+        <div class="home-contact elementoanim">
         <h2>Contacto</h2>
         
         <div class="tarjeta3">
@@ -254,7 +255,7 @@
                 <option value="prefiero-no-decir">Prefiero no decir</option>
             </select>
 
-            <label for="lugar">País donde te encuentras:</label>
+            <label for="lugar">País</label>
             <input type="text" id="lugar" name="lugar" required>
 
             <label for="comentarios">Comentarios:</label>
