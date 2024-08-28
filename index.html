@@ -240,26 +240,32 @@
         <h2>Contacto</h2>
         
         <div class="tarjeta3">
-        <form>
-            <label for="nombre">Nombre y Apellido:</label>
-            <input type="text" id="nombre" name="nombre" required>
+        <form id="contact-form">
+            <label for="name">Nombre y Apellido:</label>
+            <input type="text" name="name" placeholder="Nombre y Apellido" required>
 
-            <label for="edad">Edad:</label>
-            <input type="number" id="edad" name="edad" required>
+            <label for="age">Edad:</label>
+            <input type="number" name="age" placeholder="Edad" min="10" max="99" required>
 
-            <label for="genero">Género:</label>
-            <select id="genero" name="genero" required>
-                <option value="femenino">Femenino</option>
-                <option value="masculino">Masculino</option>
-                <option value="otro">Otro</option>
-                <option value="prefiero-no-decir">Prefiero no decir</option>
+            <label for="gender">Género:</label>
+            <select name="gender" required>
+                <option value="" disabled selected>Género</option>
+                <option value="F">Femenino</option>
+                <option value="M">Masculino</option>
+                <option value="O">Otro</option>
             </select>
 
-            <label for="lugar">País</label>
-            <input type="text" id="lugar" name="lugar" required>
+            <label for="email">Mail:</label>
+            <input type="email" name="email" placeholder="Correo Electrónico" required>
 
-            <label for="comentarios">Comentarios:</label>
-            <textarea id="comentarios" name="comentarios" required></textarea>
+            <label for="tel">Celular:</label>
+            <input type="tel" name="phone" placeholder="Celular" required>
+
+            <label for="location">País</label>
+            <input type="text" name="location" placeholder="País donde te encuentras" required>
+
+            <label for="comments">Comentarios:</label>
+            <textarea name="comments" placeholder="Comentarios (hasta 1000 caracteres máximo)" maxlength="1000" required></textarea>
 
             <button class="enviar" type="submit">Enviar</button>
         </form>
@@ -289,6 +295,11 @@
     </footer>
 
     <script src="scripts.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("service_mu8jsmj");
+    })();</script>
 </body>
 
 </html>
