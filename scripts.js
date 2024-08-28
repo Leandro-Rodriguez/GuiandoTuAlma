@@ -47,13 +47,24 @@ let observer = new IntersectionObserver((entries) => {
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita el envío por defecto del formulario
 
-    // Envía el formulario usando EmailJS
     emailjs.sendForm('service_mu8jsmj', 'template_2ffh2vd', this)
         .then(function(response) {
-            console.log('Mensaje Enviado!', response.status, response.text);
-            document.getElementById('status-message').textContent = "Enviado con éxito.";
+            console.log('ENVIADO!', response.status, response.text);
+            // Mostrar la alerta de éxito con SweetAlert
+            Swal.fire({
+                icon: 'success',
+                title: '¡Formulario enviado!',
+                text: 'Tu mensaje ha sido enviado con éxito. Nos pondremos en contacto contigo pronto.',
+                confirmButtonText: 'OK'
+            });
         }, function(error) {
-            console.log('Error al enviar', error);
-            document.getElementById('status-message').textContent = "Hubo un error al enviar el formulario.";
+            console.log('ERROR', error);
+            // Mostrar la alerta de error con SweetAlert
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo.',
+                confirmButtonText: 'OK'
+            });
         });
 });
