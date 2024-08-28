@@ -43,3 +43,17 @@ let observer = new IntersectionObserver((entries) => {
   elementos.forEach(elementoanim => {
     observer.observe(elementoanim);
   });
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita el envío por defecto del formulario
+
+    // Envía el formulario usando EmailJS
+    emailjs.sendForm('service_mu8jsmj', 'template_2ffh2vd', this)
+        .then(function(response) {
+            console.log('Mensaje Enviado!', response.status, response.text);
+            document.getElementById('status-message').textContent = "Enviado con éxito.";
+        }, function(error) {
+            console.log('Error al enviar', error);
+            document.getElementById('status-message').textContent = "Hubo un error al enviar el formulario.";
+        });
+});
