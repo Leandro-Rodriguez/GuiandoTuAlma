@@ -68,3 +68,36 @@ let observer = new IntersectionObserver((entries) => {
             });
         });
 });
+
+VanillaTilt.init(document.querySelectorAll(".tarjeta, .tarjeta2, .tarjeta3"), {
+    max: 55,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.5,
+});
+
+function handleMouseMove(event) {
+    const tarjeta = event.currentTarget;
+    const { clientX, clientY } = event; // Coordenadas del cursor
+    const { offsetWidth, offsetHeight, offsetLeft, offsetTop } = tarjeta;
+
+    const centerX = offsetLeft + offsetWidth / 2; // Centro del elemento en X
+    const centerY = offsetTop + offsetHeight / 2; // Centro del elemento en Y
+
+    const deltaX = clientX - centerX; // Diferencia entre el cursor y el centro en X
+    const deltaY = clientY - centerY; // Diferencia entre el cursor y el centro en Y
+
+    const rotationX = (deltaY / offsetHeight) * 15; // Calcular la rotación en X
+    const rotationY = (deltaX / offsetWidth) * -15; // Calcular la rotación en Y
+
+    tarjeta.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`; // Aplicar transformación
+}
+
+function resetTransform(event) {
+    event.currentTarget.style.transform = 'rotateX(0deg) rotateY(0deg)';
+}
+
+document.querySelectorAll('.tarjeta, .tarjeta2, .tarjeta3').forEach(tarjeta => {
+    tarjeta.addEventListener('mousemove', handleMouseMove);
+    tarjeta.addEventListener('mouseleave', resetTransform);
+});
